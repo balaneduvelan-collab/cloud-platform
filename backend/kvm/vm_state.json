@@ -1,0 +1,14 @@
+{
+  "test-vm": {
+    "status": "stopped"
+  },
+  "test-vm1": {
+    "status": "stopped"
+  },
+  "test-vm3": {
+    "status": "running"
+  },
+  "test-vm4": {
+    "status": "running"
+  }
+}

@@ -1,15 +1,11 @@
 from fastapi import FastAPI
-from backend.kvm.kvm_manager import KVMManager
+from orchestrator.api.vm_routes import router as vm_router
 
-app = FastAPI(title="Cloud Platform Orchestration")
+app = FastAPI(title="Cloud Platform Orchestration API")
 
-# Force mock mode for now
-kvm_manager = KVMManager(mock_mode=True)
+# Include all VM-related routes
+app.include_router(vm_router)
 
 @app.get("/")
 def root():
-    return {"message": "Cloud Platform Orchestration API running"}
-
-@app.get("/vms")
-def list_vms():
-    return {"vms": kvm_manager.list_vms()}
+    return {"message": "Cloud Platform API running"}
